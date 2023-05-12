@@ -1,7 +1,7 @@
 import * as React from "react"
 import { SerializeOptions } from "next-mdx-remote/dist/types"
 import { MDXRemote } from "next-mdx-remote/rsc"
-import rehypePrettyCode from "rehype-pretty-code"
+import rehypePrism from "rehype-prism-plus"
 import remarkGfm from "remark-gfm"
 
 import { cn } from "@/lib/utils"
@@ -9,9 +9,7 @@ import { cn } from "@/lib/utils"
 const mdxOptions: SerializeOptions = {
   mdxOptions: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      [rehypePrettyCode, { theme: "one-dark-pro", keepBackground: true }],
-    ],
+    rehypePlugins: [rehypePrism],
     format: "md",
   },
   parseFrontmatter: false,

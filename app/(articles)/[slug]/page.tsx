@@ -1,3 +1,4 @@
+import "@/styles/prism-darcula.css"
 import { Suspense } from "react"
 
 import { prisma } from "@/lib/prisma"
