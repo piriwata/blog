@@ -9,6 +9,8 @@ datasource db {
 }
 
 model posts {
-  title   String @id @db.VarChar(255)
-  content String @db.Text
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  slug      String   @id @db.VarChar(255)
+  updatedAt DateTime @default(now()) @updatedAt
 }
