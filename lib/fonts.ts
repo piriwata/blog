@@ -4,10 +4,11 @@ export const kosugiMaru = Kosugi_Maru({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-kosugi",
-  display: "swap",
+  display: "block",
 })
 
 export const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jet",
+  display: "block",
 })

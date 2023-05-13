@@ -1,5 +1,6 @@
+import Image from "next/image"
 import Link from "next/link"
-import { Github, Twitter } from "lucide-react"
+import { Twitter } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
@@ -11,9 +12,11 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className={"mr-6 flex items-center space-x-2"}>
           <Avatar className={"h-12 w-12"}>
-            <AvatarImage
-              src="https://github.com/piriwata.png"
-              alt="@piriwata"
+            <Image
+              src={"https://github.com/piriwata.png"}
+              alt={"@piriwata"}
+              width={120}
+              height={120}
             />
           </Avatar>
           <span className={"font-mono text-xl tracking-wide text-foreground"}>
