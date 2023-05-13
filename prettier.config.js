@@ -3,6 +3,8 @@ module.exports = {
   endOfLine: "lf",
   semi: false,
   tabWidth: 2,
+  useTabs: false,
+  bracketSameLine: true,
   trailingComma: "es5",
   importOrder: [
     "^(react/(.*)$)|^(react$)",

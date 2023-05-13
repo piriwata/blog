@@ -8,8 +8,7 @@ export function Footer() {
             className="text-blue-400"
             href="https://github.com/piriwata"
             target="_blank"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             piriwata
           </a>
         </p>

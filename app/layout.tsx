@@ -24,8 +24,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${kosugiMaru.variable} ${jetBrainsMono.variable} min-h-screen bg-background font-sans antialiased`}
-      >
+        className={`${kosugiMaru.variable} ${jetBrainsMono.variable} min-h-screen bg-background font-sans antialiased`}>
         <ThemeProvider attribute={"class"} defaultTheme={"system"} enableSystem>
           <div className={"relative flex min-h-screen flex-col"}>
             <Header />
