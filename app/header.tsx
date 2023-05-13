@@ -15,8 +15,7 @@ export function Header() {
             <Image
               src={"https://github.com/piriwata.png"}
               alt={"@piriwata"}
-              width={120}
-              height={120}
+              fill
             />
           </Avatar>
           <span className={"font-mono text-xl tracking-wide text-foreground"}>
