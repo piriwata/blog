@@ -1,15 +1,13 @@
-import {
-  JetBrains_Mono as FontMono,
-  Kosugi_Maru as FontSans,
-} from "next/font/google"
+import { JetBrains_Mono, Kosugi_Maru } from "next/font/google"
 
-export const fontSans = FontSans({
+export const kosugiMaru = Kosugi_Maru({
   weight: "400",
   subsets: ["latin"],
+  variable: "--font-kosugi",
   display: "swap",
 })
 
-export const fontMono = FontMono({
+export const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-jet",
 })

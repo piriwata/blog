@@ -16,10 +16,8 @@ export function Header() {
               alt="@piriwata"
             />
           </Avatar>
-          <span className={"text-xl tracking-wide text-foreground"}>
-            p<span className={"mx-[-1px]"}>i</span>r
-            <span className={"ml-[-2px]"}>i</span>
-            <span className={"mr-[1px]"}>w</span>ata
+          <span className={"font-mono text-xl tracking-wide text-foreground"}>
+            piriwata
           </span>
         </Link>
 
