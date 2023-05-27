@@ -5,6 +5,7 @@ import rehypePrism from "rehype-prism-plus"
 import remarkGfm from "remark-gfm"
 
 import { cn } from "@/lib/utils"
+import { H1, H2 } from "@/components/ui/typography"
 
 const mdxOptions: SerializeOptions = {
   mdxOptions: {
@@ -16,15 +17,8 @@ const mdxOptions: SerializeOptions = {
 }
 
 const mdxComponents = {
-  h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1
-      className={cn(
-        "font-heading mt-2 scroll-m-20 text-4xl font-bold",
-        className
-      )}
-      {...props}
-    />
-  ),
+  h1: H1,
+  h2: H2,
 }
 
 type Props = {
