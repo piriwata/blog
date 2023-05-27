@@ -1,16 +1,28 @@
 import Link from "next/link"
+import matter from "gray-matter"
 
 import { prisma } from "@/lib/prisma"
+
+type Article = {
+  slug: string
+  title: string
+  description: string
+  date: string
+}
 
 const getLatestArticles = async () => {
   const posts = await prisma.posts.findMany({
     take: 4,
   })
-  return posts.map((post) => ({
-    title: post.content.slice(0, 30),
-    date: post.updatedAt.toLocaleDateString(),
-    ...post,
-  }))
+  return posts.map((post) => {
+    const { data } = matter(post.content)
+    return {
+      slug: post.slug,
+      title: data.title,
+      description: data.description,
+      date: post.updatedAt.toLocaleDateString(),
+    } as Article
+  })
 }
 
 export default async function Home() {
@@ -28,7 +40,7 @@ export default async function Home() {
               <Link href={`/${article.slug}`}>{article.title}</Link>
             </h3>
             <span className={"text-sm text-gray-500"}>{article.date}</span>
-            <p>{article.content}</p>
+            <p>{article.description}</p>
           </article>
         ))}
       </div>
