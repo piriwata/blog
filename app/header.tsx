@@ -2,9 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Twitter } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@lib/utils"
+import { Avatar, AvatarImage } from "@components/ui/avatar"
+import { buttonVariants } from "@components/ui/button"
 
 export function Header() {
   return (

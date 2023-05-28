@@ -1,11 +1,11 @@
-import "@/styles/globals.css"
+import "./globals.css"
 import * as React from "react"
 import { Metadata } from "next"
-import { Footer } from "@/app/footer"
-import { Header } from "@/app/header"
 
-import { jetBrainsMono, kosugiMaru } from "@/lib/fonts"
-import { ThemeProvider } from "@/components/theme-provider"
+import { jetBrainsMono, kosugiMaru } from "@lib/fonts"
+import { ThemeProvider } from "@components/theme-provider"
+import { Footer } from "./footer"
+import { Header } from "./header"
 
 export const metadata: Metadata = {
   title: {

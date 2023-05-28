@@ -4,8 +4,8 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import rehypePrism from "rehype-prism-plus"
 import remarkGfm from "remark-gfm"
 
-import { cn } from "@/lib/utils"
-import { H1, H2 } from "@/components/ui/typography"
+import { cn } from "@lib/utils"
+import { H1, H2 } from "@components/ui/typography"
 
 const mdxOptions: SerializeOptions = {
   mdxOptions: {

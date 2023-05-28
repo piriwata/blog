@@ -1,10 +1,10 @@
-import "@/styles/prism-darcula.css"
+import "./prism-darcula.css"
 import { Suspense } from "react"
 import matter from "gray-matter"
 
-import { prisma } from "@/lib/prisma"
-import { MDX } from "@/components/mdx"
-import { H1 } from "@/components/ui/typography"
+import { prisma } from "@lib/prisma"
+import { H1 } from "@components/ui/typography"
+import { MDX } from "./mdx"
 
 type Article = {
   title: string

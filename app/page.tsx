@@ -1,7 +1,7 @@
 import Link from "next/link"
 import matter from "gray-matter"
 
-import { prisma } from "@/lib/prisma"
+import { prisma } from "@lib/prisma"
 
 type Article = {
   slug: string
