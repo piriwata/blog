@@ -1,9 +1,8 @@
-import { JetBrains_Mono, Kosugi_Maru } from "next/font/google"
+import { JetBrains_Mono, Noto_Sans_JP } from "next/font/google"
 
-export const kosugiMaru = Kosugi_Maru({
-  weight: "400",
+export const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
-  variable: "--font-kosugi",
+  variable: "--font-noto",
   display: "block",
 })
 

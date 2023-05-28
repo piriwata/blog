@@ -2,7 +2,7 @@ import "./globals.css"
 import * as React from "react"
 import { Metadata } from "next"
 
-import { jetBrainsMono, kosugiMaru } from "@lib/fonts"
+import { jetBrainsMono, notoSansJP } from "@lib/fonts"
 import { ThemeProvider } from "@components/theme-provider"
 import { Footer } from "./footer"
 import { Header } from "./header"
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${kosugiMaru.variable} ${jetBrainsMono.variable} min-h-screen bg-background font-sans antialiased`}>
+        className={`${notoSansJP.variable} ${jetBrainsMono.variable} min-h-screen bg-background font-sans antialiased`}>
         <ThemeProvider attribute={"class"} defaultTheme={"system"} enableSystem>
           <div className={"relative flex min-h-screen flex-col"}>
             <Header />
