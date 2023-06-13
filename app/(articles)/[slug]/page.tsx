@@ -1,10 +1,13 @@
 import "./prism-darcula.css"
-import { Suspense } from "react"
+import { Suspense, cache } from "react"
 import matter from "gray-matter"
 
 import { prisma } from "@lib/prisma"
 import { H1 } from "@components/ui/typography"
 import { MDX } from "./mdx"
+
+// set revalidation frequency of page to (in seconds).
+export const revalidate = 3600
 
 type Article = {
   title: string
@@ -12,18 +15,17 @@ type Article = {
   date: string
 }
 
-const getArticle = async (slug: string) => {
+const getArticle = cache(async (slug: string): Promise<Article> => {
   const post = await prisma.posts.findUnique({
     where: { slug },
   })
   const { data, content } = matter(post!.content)
   return {
-    slug: slug,
     title: data.title,
     body: content,
     date: post!.updatedAt.toLocaleDateString(),
-  } as Article
-}
+  }
+})
 
 type Props = {
   params: { slug: string }

@@ -3,6 +3,9 @@ import matter from "gray-matter"
 
 import { prisma } from "@lib/prisma"
 
+// set revalidation frequency of page to (in seconds).
+export const revalidate = 3600
+
 type Article = {
   slug: string
   title: string
@@ -10,19 +13,21 @@ type Article = {
   date: string
 }
 
-const getLatestArticles = async () => {
+const getLatestArticles = async (): Promise<Article[]> => {
   const posts = await prisma.posts.findMany({
     take: 4,
   })
-  return posts.map((post) => {
-    const { data } = matter(post.content)
-    return {
-      slug: post.slug,
-      title: data.title,
-      description: data.description,
-      date: post.updatedAt.toLocaleDateString(),
-    } as Article
-  })
+  return posts
+    .map((post) => ({
+      data: matter(post.content).data,
+      post,
+    }))
+    .map((e) => ({
+      slug: e.post.slug,
+      title: e.data.title,
+      description: e.data.description,
+      date: e.post.updatedAt.toLocaleDateString(),
+    }))
 }
 
 export default async function Home() {
