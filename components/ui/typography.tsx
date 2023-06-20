@@ -1,4 +1,5 @@
 import * as React from "react"
+import Balancer from "react-wrap-balancer"
 
 import { cn } from "@lib/utils"
 
@@ -8,11 +9,11 @@ export const H1 = ({
 }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <h1
     className={cn(
-      "font-heading mb-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+      "font-heading mb-6 scroll-m-20 text-4xl font-extrabold tracking-tight",
       className
-    )}
-    {...props}
-  />
+    )}>
+    <Balancer {...props} />
+  </h1>
 )
 
 export const H2 = ({
@@ -21,7 +22,7 @@ export const H2 = ({
 }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <h2
     className={cn(
-      "font-heading my-4 scroll-m-20 border-b text-3xl font-semibold tracking-tight transition-colors first:mt-0 lg:text-4xl",
+      "font-heading my-4 scroll-m-20 border-b text-3xl font-semibold tracking-tight transition-colors first:mt-0",
       className
     )}
     {...props}
